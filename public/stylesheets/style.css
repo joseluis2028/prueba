@@ -1,8 +1,19 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  background-color: #00ffcc;
 }
-
-a {
-  color: #00B7FF;
+div{
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  padding: 16px;
+  width: 86%;
+  margin: 0 auto;
+}
+fieldset{
+  margin-bottom: 12px;
+}
+legend{
+  background-color: #ddf8f7;
+  padding: 5px;
+  border-radius: 20xp;
+  font-weight: bold;
 }
