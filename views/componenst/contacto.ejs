@@ -1,14 +1,39 @@
 <div>
 <fieldset>
   <legend>Formulario de Contacto</legend>
-  <form action="/form-contacto" method="post">
+  <form action="/form-contacto" method="post" onsubmit="return submitUserForm();">
     <label for="nombre">Nombre:</label><br>
     <input type="text" id="name" name="name"><br>
     <label for="email">Correo electrónico:</label><br>
     <input type="email" id="email" name="email"><br>
     <label for="comentario">Comentario:</label><br>
     <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea><br>
+    <div class="g-recaptcha" data-sitekey="6LfDge4pAAAAAEYPB9kkDXu2GvxjYsEH7VoXVlRI" 
+    data-callback="verifyCaptcha"></div>
+    <div id="g-recaptcha-error"></div>
     <input type="submit" value="Enviar">
   </form> 
 </fieldset>
 </div>
+<div>
+  
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+  var recaptcha_response = '';
+  function submitUserForm() {
+      if(recaptcha_response.length == 0) {
+          document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+          return false;
+      }
+      return true;
+  }
+  
+  function verifyCaptcha(token) {
+      recaptcha_response = token;
+      document.getElementById('g-recaptcha-error').innerHTML = '';
+  }
+  </script>
+</div>
+
+
+ 
