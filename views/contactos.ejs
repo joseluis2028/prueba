@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contactos</title>
+  </head>
+  <body>
+  <div class="Todo">  
+  <h1>Lista de Contactos</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Nombre</th>
+        <th>Mensaje</th>
+        <th>Ip</th>
+        <th>Fecha</th>
+        <th>Id</th>
+        <th>Pais</th>
+      </tr>
+    </thead>  
+    <tbody>
+      <% data.forEach(function(row) {%>
+        <tr>
+          <td><%=row.email %></td>
+          <td><%=row.nombre %></td>
+          <td><%=row.mensaje %></td>
+          <td><%=row.ip %></td>
+          <td><%=row.fecha %></td>
+          <td><%=row.id %></td>
+          <td><%=row.pais %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+    </table>
+    </div>
+  </body>
+  </html>
